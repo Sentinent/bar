@@ -1,0 +1,30 @@
+#!/usr/bin/env python3
+
+'''
+Yes this took us the entire 12 hours
+Please don't make fun of us ok we are slow coders
+'''
+
+import sys
+import pyfiglet
+
+COLORS = [
+    '\u001b[31m',
+    '\u001b[32m',
+    '\u001b[33m',
+    '\u001b[34m',
+    '\u001b[35m',
+    '\u001b[36m'
+]
+
+RESET = '\u001b[0m'
+
+curr_index = 0
+
+while True:
+    for line in sys.stdin:
+        print(COLORS[curr_index % len(COLORS)])
+        pyfiglet.print_figlet(line)
+        print(RESET)
+
+        curr_index += 1
